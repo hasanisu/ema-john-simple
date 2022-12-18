@@ -30,12 +30,16 @@ const Shop = () => {
         setCart(savedCart);
     } ,[products])
 
-    const handleAddToCart = (product) =>{
-        console.log(product);
+    const handleAddToCart = (selectedProduct) =>{
+        console.log(selectedProduct);
         // cart.push(product); eita normal process
-        const newCart = [...cart, product];
+        const exists = cart.find(product => product.id === selectedProduct.id);
+        if(!exists){
+            selectedProduct.quantity = 1;
+        }
+        const newCart = [...cart, selectedProduct];
         setCart(newCart);
-        addToDb(product.id);
+        addToDb(selectedProduct.id);
     }
 
     return (
