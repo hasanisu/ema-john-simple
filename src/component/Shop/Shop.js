@@ -10,18 +10,28 @@ const Shop = () => {
     
 
     useEffect( ()=>{
+        console.log('product load before fetch')
         fetch('products.json')
         .then(res => res.json())
         .then(data => setProducts(data))
     },[]);
 
-    useEffect( ()=>{
+    useEffect(()=>{
         const storedCart = getStoredCart();
-        console.log(storedCart);
-    } ,[])
+        const savedCart = [];
+        for(const id in storedCart){
+            const addedCart = products.find(product => product.id === id);
+            if(addedCart){
+                const quantity = storedCart[id];
+                addedCart.quantity = quantity;
+                savedCart.push(addedCart);
+            }
+        }
+        setCart(savedCart);
+    } ,[products])
 
     const handleAddToCart = (product) =>{
-        // console.log(product);
+        console.log(product);
         // cart.push(product); eita normal process
         const newCart = [...cart, product];
         setCart(newCart);
