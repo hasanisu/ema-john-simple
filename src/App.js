@@ -7,6 +7,8 @@ import Orders from './component/Orders/Orders';
 import Inventories from './component/Inventories/Inventories';
 import About from './component/About/About';
 import { addToCartProduct } from './loader/addTocartProduct';
+import Login from './component/Login/Login';
+import SignUp from './component/SignUp/SignUp';
 
 
 function App() {
@@ -33,6 +35,14 @@ function App() {
         {
           path: '/about',
           element: <About></About>
+        },
+        {
+          path: 'login',
+          element: <Login></Login>
+        },
+        {
+          path:'signup',
+          element:<SignUp></SignUp>
         }
       ]
     }

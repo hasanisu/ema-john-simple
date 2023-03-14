@@ -10,6 +10,12 @@ const Shop = () => {
     // old style
     // const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([]);
+
+    const clearCart =()=>{
+        setCart([]);
+        deleteShoppingCart();
+
+    }
     
     // old style
     // useEffect( ()=>{
@@ -52,11 +58,7 @@ const Shop = () => {
     }
 
 
-    const clearCart =()=>{
-        setCart([]);
-        deleteShoppingCart();
-
-    }
+    
 
     return (
         <div className='shop-container'>
