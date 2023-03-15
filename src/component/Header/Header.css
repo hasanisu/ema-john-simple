@@ -18,3 +18,12 @@
 .header a:hover{
     color: orange;
 }
+
+.btn-logout{
+    margin-left: 10px;
+    
+}
+
+.user{
+    color: rgb(181, 245, 5);
+}

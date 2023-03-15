@@ -9,6 +9,8 @@ import About from './component/About/About';
 import { addToCartProduct } from './loader/addTocartProduct';
 import Login from './component/Login/Login';
 import SignUp from './component/SignUp/SignUp';
+import Shipping from './component/Shipping/Shipping';
+import PrivateRoutes from './routes/PrivateRoutes';
 
 
 function App() {
@@ -31,6 +33,10 @@ function App() {
         {
           path: '/inventories',
           element: <Inventories></Inventories>
+        },
+        {
+          path: '/shipping',
+          element: <PrivateRoutes><Shipping></Shipping></PrivateRoutes>
         },
         {
           path: '/about',
